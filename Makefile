@@ -69,7 +69,7 @@ DEFS += -DBUILD_VERSION='"$(BUILD_VERSION)"'
 DEFS += -DLFS2_NO_ASSERT
 
 # Set linker options
-LDFLAGS += -Lnrfx/mdk -T monocle-core/monocle.ld
+LDFLAGS += -Lnrfx/mdk -T monocle-nrf52dk/monocle.ld
 LDFLAGS += -Wl,--gc-sections
 LDFLAGS += -Xlinker -Map=$(@:.elf=.map)
 LDFLAGS += --specs=nano.specs
@@ -81,7 +81,7 @@ INC += -Imicropython/lib/cmsis/inc
 INC += -Imicropython/shared/readline
 INC += -Imodules
 INC += -Imodules/libvgrs/src
-INC += -Imonocle-core
+INC += -Imonocle-nrf52dk
 INC += -Inrfx
 INC += -Inrfx/drivers
 INC += -Inrfx/drivers/include
@@ -93,14 +93,21 @@ INC += -Inrfx/soc
 INC += -Isegger
 INC += -Isoftdevice/include
 INC += -Isoftdevice/include/nrf52
+INC += -Itensorflow
+INC += -Iflatbuffers
+# INC += -Itensorflow/lite
+# INC += -Itensorflow/lite/micro
+# INC += -Itensorflow/lite/micro/examples
+# INC += -Itensorflow/lite/micro/examples/micro_speech
+# INC += -Itensorflow/lite/micro/examples/micro_speech/micro_features
 
 # Assemble the C flags variable
 CFLAGS += $(WARN) $(OPT) $(INC) $(DEFS)
 
 SRC_C += main.c
-SRC_C += monocle-core/monocle-critical.c
-SRC_C += monocle-core/monocle-drivers.c
-SRC_C += monocle-core/monocle-startup.c
+SRC_C += monocle-nrf52dk/monocle-critical.c
+SRC_C += monocle-nrf52dk/monocle-drivers.c
+SRC_C += monocle-nrf52dk/monocle-startup.c
 SRC_C += mphalport.c
 
 SRC_C += micropython/extmod/modasyncio.c
@@ -128,6 +135,8 @@ SRC_C += modules/microphone.c
 SRC_C += modules/rtt.c
 SRC_C += modules/storage.c
 SRC_C += modules/touch.c
+SRC_C += modules/kws.c
+SRC_C += modules/helpers/kws_helper.cc
 SRC_C += modules/update.c
 SRC_C += modules/libvgrs/src/modvgr2d.c
 SRC_C += modules/libvgrs/src/vgr2dlib.c
@@ -209,6 +218,7 @@ build/application.elf: $(OBJ)
 	$(Q)$(SIZE) $@
 
 flash: build/application.hex
+	nrfjprog -q --recover
 	nrfjprog -q --program softdevice/*.hex --chiperase
 	nrfjprog -q --program build/application.hex
 	nrfjprog --reset -f nrf52
