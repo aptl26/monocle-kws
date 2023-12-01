@@ -18,18 +18,18 @@ limitations under the License.
 #include <cstddef>
 #include <cstdint>
 
-#include "../../../flatbuffers/flatbuffers.h"  // from @flatbuffers
-#include "tensorflow/lite/c/c_api_types.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/core/api/error_reporter.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/micro/micro_allocator.h"
-#include "tensorflow/lite/micro/micro_context.h"
-#include "tensorflow/lite/micro/micro_graph.h"
-#include "tensorflow/lite/micro/micro_op_resolver.h"
-#include "tensorflow/lite/micro/micro_profiler_interface.h"
-#include "tensorflow/lite/portable_type_to_tflitetype.h"
-#include "tensorflow/lite/schema/schema_generated.h"
+#include "../../../flatbuffers/include/flatbuffers/flatbuffers.h"  // from @flatbuffers
+#include "../c/c_api_types.h"
+#include "../c/common.h"
+#include "../core/api/error_reporter.h"
+#include "../kernels/internal/tensor_ctypes.h"
+#include "../micro/micro_allocator.h"
+#include "../micro/micro_context.h"
+#include "../micro/micro_graph.h"
+#include "../micro/micro_op_resolver.h"
+#include "../micro/micro_profiler_interface.h"
+#include "../portable_type_to_tflitetype.h"
+#include "../schema/schema_generated.h"
 
 /// Copied from tensorflow/lite/version.h to avoid a dependency chain into
 // tensorflow/core.

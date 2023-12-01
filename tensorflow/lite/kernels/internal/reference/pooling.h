@@ -17,10 +17,10 @@ limitations under the License.
 
 #include <algorithm>
 
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/cppmath.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/types.h"
+#include "../common.h"
+#include "../cppmath.h"
+#include "../quantization_util.h"
+#include "../types.h"
 
 namespace tflite {
 namespace reference_ops {

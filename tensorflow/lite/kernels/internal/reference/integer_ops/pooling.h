@@ -18,7 +18,7 @@ limitations under the License.
 #include <algorithm>
 #include <limits>
 
-#include "tensorflow/lite/kernels/internal/common.h"
+#include "../../common.h"
 
 namespace tflite {
 namespace reference_integer_ops {

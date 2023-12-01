@@ -1,4 +1,4 @@
-#include "./helpers/kws_helper.h"
+#include "./kws_helper.h"
 
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(run_obj, run);
 

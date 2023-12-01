@@ -19,9 +19,9 @@ limitations under the License.
 #include <cstdint>
 #include <limits>
 
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/kernels/internal/cppmath.h"
-#include "tensorflow/lite/kernels/internal/types.h"
+#include "./compatibility.h"
+#include "./cppmath.h"
+#include "./types.h"
 
 namespace tflite {
 

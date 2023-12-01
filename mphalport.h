@@ -28,8 +28,8 @@
 #include <stddef.h>
 #include <stdint.h>
 #include "mphalport.h"
-#include "nrfx_rtc.h"
-#include "touch.h"
+#include "./nrfx/drivers/include/nrfx_rtc.h"
+#include "./modules/touch.h"
 
 typedef int mp_int_t;
 typedef unsigned int mp_uint_t;

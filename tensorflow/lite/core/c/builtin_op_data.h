@@ -23,7 +23,7 @@ limitations under the License.
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "tensorflow/lite/core/c/common.h"
+#include "./common.h"
 
 #ifdef __cplusplus
 extern "C" {

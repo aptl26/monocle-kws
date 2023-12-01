@@ -36,6 +36,6 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_C_COMMON_H_
 #define TENSORFLOW_LITE_C_COMMON_H_
 
-#include "tensorflow/lite/core/c/common.h"
+#include "../core/c/common.h"
 
 #endif  // TENSORFLOW_LITE_C_COMMON_H_

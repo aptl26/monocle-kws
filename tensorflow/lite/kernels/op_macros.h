@@ -15,7 +15,7 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_KERNELS_OP_MACROS_H_
 #define TENSORFLOW_LITE_KERNELS_OP_MACROS_H_
 
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../micro/micro_log.h"
 
 #if !defined(TF_LITE_MCU_DEBUG_LOG)
 #include <cstdlib>

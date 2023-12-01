@@ -18,8 +18,8 @@ limitations under the License.
 
 #include <cstdint>
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/micro/micro_allocator.h"
+#include "../c/common.h"
+#include "./micro_allocator.h"
 
 namespace tflite {
 

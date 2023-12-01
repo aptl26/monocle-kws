@@ -15,9 +15,9 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_TFLITE_BRIDGE_FLATBUFFER_CONVERSIONS_BRIDGE_H_
 #define TENSORFLOW_LITE_MICRO_TFLITE_BRIDGE_FLATBUFFER_CONVERSIONS_BRIDGE_H_
 
-#include "tensorflow/lite/c/c_api_types.h"
-#include "tensorflow/lite/core/api/flatbuffer_conversions.h"
-#include "tensorflow/lite/schema/schema_generated.h"
+#include "../../c/c_api_types.h"
+#include "../../core/api/flatbuffer_conversions.h"
+#include "../../schema/schema_generated.h"
 
 namespace tflite {
 

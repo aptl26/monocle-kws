@@ -48,7 +48,7 @@ limitations under the License.
 #include <stddef.h>
 #include <stdint.h>
 
-#include "tensorflow/lite/core/c/c_api_types.h"  // IWYU pragma: export
+#include "./c_api_types.h"  // IWYU pragma: export
 
 #ifdef __cplusplus
 extern "C" {

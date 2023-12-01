@@ -54,9 +54,9 @@ limitations under the License.
 #include <limits>
 #include <type_traits>
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/micro/micro_log.h"
-#include "tensorflow/lite/micro/system_setup.h"
+#include "../../c/common.h"
+#include "../../micro/micro_log.h"
+#include "../../micro/system_setup.h"
 
 namespace micro_test {
 extern int tests_passed;

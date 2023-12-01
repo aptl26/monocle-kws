@@ -1,5 +1,8 @@
 #ifndef KWS_H
 #define KWS_H
+#include "../micropython/py/builtin.h"
+#include "../micropython/py/mphal.h"
+#include "../micropython/py/runtime.h"
 
 #ifdef __cplusplus
 extern "C" {

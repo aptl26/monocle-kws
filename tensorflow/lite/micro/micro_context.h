@@ -16,9 +16,9 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_MICRO_CONTEXT_H_
 #define TENSORFLOW_LITE_MICRO_MICRO_CONTEXT_H_
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/micro/micro_allocator.h"
-#include "tensorflow/lite/micro/micro_graph.h"
+#include "../c/common.h"
+#include "./micro_allocator.h"
+#include "./micro_graph.h"
 
 namespace tflite {
 // TODO(b/149795762): kTfLiteAbort cannot be part of the tflite TfLiteStatus.

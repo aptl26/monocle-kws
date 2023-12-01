@@ -15,10 +15,10 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_MICRO_OP_RESOLVER_H_
 #define TENSORFLOW_LITE_MICRO_MICRO_OP_RESOLVER_H_
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/micro/micro_common.h"
-#include "tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h"
-#include "tensorflow/lite/schema/schema_generated.h"
+#include "../c/common.h"
+#include "./micro_common.h"
+#include "./tflite_bridge/flatbuffer_conversions_bridge.h"
+#include "../schema/schema_generated.h"
 
 namespace tflite {
 

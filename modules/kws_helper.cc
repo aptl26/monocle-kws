@@ -1,14 +1,17 @@
 
 #include "./kws_helper.h"
-#include "../../tensorflow/lite/micro/examples/micro_speech/micro_features/no_micro_features_data.h"
-#include "../../tensorflow/lite/micro/examples/micro_speech/micro_features/yes_micro_features_data.h"
+#include "../tensorflow/lite/micro/examples/micro_speech/micro_features/no_micro_features_data.h"
+#include "../tensorflow/lite/micro/examples/micro_speech/micro_features/yes_micro_features_data.h"
 // #include "../../tensorflow/lite/micro/examples/micro_speech/micro_speech_model_data.h"
-#include "../../tensorflow/lite/micro/micro_interpreter.h"
-#include "../../tensorflow/lite/micro/micro_mutable_op_resolver.h"
-#include "../../tensorflow/lite/micro/testing/micro_test.h"
-#include "../../tensorflow/lite/schema/schema_generated.h"
-#include "../../tensorflow/lite/micro/examples/micro_speech/feature_provider.h"
+#include "../tensorflow/lite/micro/micro_interpreter.h"
+#include "../tensorflow/lite/micro/micro_mutable_op_resolver.h"
+#include "../tensorflow/lite/micro/testing/micro_test.h"
+#include "../tensorflow/lite/schema/schema_generated.h"
+#include "../tensorflow/lite/micro/examples/micro_speech/feature_provider.h"
 #include <chrono>
+#include "../micropython/py/builtin.h"
+#include "../micropython/py/mphal.h"
+#include "../micropython/py/runtime.h"
 
 extern "C" {
 

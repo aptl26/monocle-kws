@@ -80,6 +80,7 @@ INC += -Imicropython
 INC += -Imicropython/lib/cmsis/inc
 INC += -Imicropython/shared/readline
 INC += -Imodules
+INC += -Imodules/helpers
 INC += -Imodules/libvgrs/src
 INC += -Imonocle-nrf52dk
 INC += -Inrfx
@@ -95,6 +96,7 @@ INC += -Isoftdevice/include
 INC += -Isoftdevice/include/nrf52
 INC += -Itensorflow
 INC += -Iflatbuffers
+INC += -Ithird_party
 # INC += -Itensorflow/lite
 # INC += -Itensorflow/lite/micro
 # INC += -Itensorflow/lite/micro/examples
@@ -136,7 +138,6 @@ SRC_C += modules/rtt.c
 SRC_C += modules/storage.c
 SRC_C += modules/touch.c
 SRC_C += modules/kws.c
-SRC_C += modules/helpers/kws_helper.cc
 SRC_C += modules/update.c
 SRC_C += modules/libvgrs/src/modvgr2d.c
 SRC_C += modules/libvgrs/src/vgr2dlib.c
@@ -199,15 +200,25 @@ SRC_C += nrfx/drivers/src/prs/nrfx_prs.c
 SRC_C += nrfx/helpers/nrfx_flag32_allocator.c
 SRC_C += nrfx/mdk/system_nrf52.c
 
+SRC_CPP += modules/kws_helper.cc
+
 SRC_QSTR += $(SRC_C)
 
 OBJ += $(PY_O)
 OBJ += $(addprefix build/, $(SRC_C:.c=.o))
 
+OBJ += $(addprefix build/, $(SRC_CPP:.cc=.o))
+
 # Link required libraries
 LIB += -lm -lc -lnosys -lgcc
 
+CXX = arm-none-eabi-g++
+CXXFLAGS = $(WARN) $(OPT) $(DEFS) -std=c++17
+
 all: build/application.hex
+
+build/%.o: %.cc
+	$(CXX) $(CXXFLAGS) $(INC) -c $< -o $@
 
 build/application.hex: build/application.elf
 	$(OBJCOPY) -O ihex $< $@
@@ -231,4 +242,7 @@ release: clean build/application.hex
 	mergehex -m build/settings.hex build/application.hex softdevice/s132_nrf52_7.3.0_softdevice.hex bootloader/build/nrf52832_xxaa_s132.hex -o build/monocle-micropython-$(BUILD_VERSION).hex
 	nrfutil pkg generate --hw-version 52 --application-version 0 --application build/application.hex --sd-req 0x0124 --key-file bootloader/published_privkey.pem build/monocle-micropython-$(BUILD_VERSION).zip
 
+
 include micropython/py/mkrules.mk
+
+

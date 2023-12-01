@@ -1,7 +1,7 @@
 #ifndef TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_FEATURE_PROVIDER_H_
 #define TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_FEATURE_PROVIDER_H_
 
-#include "tensorflow/lite/c/common.h"
+#include "../../../c/common.h"
 
 class FeatureProvider {
  public:

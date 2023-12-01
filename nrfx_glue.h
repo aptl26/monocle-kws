@@ -24,12 +24,14 @@
 
 #pragma once
 
-#include "monocle.h"
+#include "./monocle-nrf52dk/monocle.h"
 
-#include "nrfx.h"
-#include "nrf_nvic.h"
-#include <soc/nrfx_coredep.h>
-#include <soc/nrfx_atomic.h>
+#include "./nrfx/nrfx.h"
+#include "./softdevice/include/nrf_nvic.h"
+#include "./nrfx/soc/nrfx_coredep.h"
+#include "./nrfx/soc/nrfx_atomic.h"
+
+// #define NRF52832_XXAA
 
 #define NRFX_ASSERT(expression)  \
     do                           \
